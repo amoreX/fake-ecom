@@ -1,7 +1,6 @@
-"use client"
 
 import type React from "react"
-
+import "@/fonts.css"
 import { useState,useEffect } from "react"
 
 import { motion } from "framer-motion"
@@ -72,7 +71,7 @@ export default function Login() {
       >
         <Card className="border-none shadow-lg">
           <CardHeader className="space-y-1 text-center">
-            <CardTitle className="text-2xl font-bold">Welcome To Fakeshop</CardTitle>
+            <CardTitle className="text-2xl font-Canela">Welcome To Fakeshop</CardTitle>
             <CardDescription>
               Enter your credentials to access your account. 
             </CardDescription>

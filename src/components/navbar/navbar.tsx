@@ -26,7 +26,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 flex h-16 items-center justify-between">
         <div onClick={() => navigate("/dashboard")} className="font-bold text-xl text-teal-600">
-          ElegantShop
+          Fake-Shop
         </div>
 
         {/* Desktop Navigation */}

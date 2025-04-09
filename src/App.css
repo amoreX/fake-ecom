@@ -3,3 +3,10 @@
   margin: 0 auto;
 
 }
+
+@font-face {
+  font-family: 'Canela';
+  src: url('/Canela Family/Canela-Regular-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
