@@ -1,5 +1,5 @@
 export default function Login(){
     return(
-        <>ok</>
+        <div className="text-black">ok</div>
     )
 }

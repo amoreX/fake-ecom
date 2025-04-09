@@ -1,7 +1,7 @@
 export default function Cart(){
     return(
         <>
-        ok
+        cart
         </>
     )
 }
