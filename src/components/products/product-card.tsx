@@ -46,9 +46,9 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           <div className="flex flex-col flex-1">
             <div className="space-y-1 mb-auto">
-              <h3 className="font-bold text-lg line-clamp-2">{product.title}</h3>
+              <h3 className="font-bold text-lg line-clamp-1">{product.title}</h3>
               <p className="text-sm text-muted-foreground">{product.category}</p>
-              <p className="text-sm text-muted-foreground line-clamp-3">{product.description}</p>
+              <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
               <div className="flex items-center gap-1 text-sm text-muted-foreground">
                 <span className="text-yellow-500">★</span>
                 <span>{product.rating.rate || "4.0"}</span>
