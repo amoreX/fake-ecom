@@ -1,15 +1,16 @@
-
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 
 type CartItem = {
   id: number
-  name: string
+  title: string
   price: number
   description: string
-  image?: string
-  category?: string
-  rating?: number
-  reviews?: number
+  image: string
+  category: string
+  rating: {
+    rate: number
+    count: number
+  }
   quantity: number
 }
 
