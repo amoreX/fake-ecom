@@ -5,12 +5,14 @@ import axios from "axios"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
+import { motion, AnimatePresence } from "framer-motion"
 import { useCart } from "@/lib/cart-context"
 
 export default function ProductDetailPage() {
   const { productId } = useParams<{ productId: string }>()
   const navigate = useNavigate()
   const { addToCart } = useCart()
+  const [showSuccess, setShowSuccess] = useState(false)
   const [quantity, setQuantity] = useState(1)
   const [product, setProduct] = useState<any>(null)
   const [loading, setLoading] = useState(true)
@@ -44,6 +46,11 @@ export default function ProductDetailPage() {
   const handleAddToCart = () => {
     if (product) {
       addToCart({ ...product, quantity })
+      setShowSuccess(true)
+
+      setTimeout(() => {
+        setShowSuccess(false)
+      }, 4000)
     }
   }
 
@@ -143,6 +150,19 @@ export default function ProductDetailPage() {
           </Card>
         </div>
       </main>
+
+      <AnimatePresence>
+        {showSuccess && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-green-100 border border-green-200 text-green-800 px-6 py-4 rounded-lg shadow-lg flex items-center gap-3 z-50"
+          >
+            <span className="font-medium">Added to Cart!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

@@ -1,17 +1,18 @@
-
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { Check, Minus, Plus, Trash2 } from "lucide-react"
+import { Minus, Plus, Trash2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+
 
 import { useCart } from "@/lib/cart-context"
 import { motion, AnimatePresence } from "framer-motion"
 
 export default function Cart() {
-  const navigate=useNavigate();
+  const navigate = useNavigate()
   const { cart, updateQuantity, removeFromCart, clearCart } = useCart()
+  
   const [showSuccess, setShowSuccess] = useState(false)
 
   useEffect(() => {
@@ -174,9 +175,6 @@ export default function Cart() {
             exit={{ opacity: 0, y: 50 }}
             className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-green-100 border border-green-200 text-green-800 px-6 py-4 rounded-lg shadow-lg flex items-center gap-3 z-50"
           >
-            <div className="bg-green-500 rounded-full p-1">
-              <Check className="h-5 w-5 text-white" />
-            </div>
             <span className="font-medium">Order placed successfully!</span>
           </motion.div>
         )}

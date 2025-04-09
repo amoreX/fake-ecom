@@ -73,7 +73,9 @@ export default function Login() {
         <Card className="border-none shadow-lg">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-2xl font-bold">Welcome To Fakeshop</CardTitle>
-            <CardDescription>Enter your credentials to access your account</CardDescription>
+            <CardDescription>
+              Enter your credentials to access your account. 
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
@@ -121,6 +123,21 @@ export default function Login() {
               </Button>
             </form>
           </CardContent>
+          <div className="text-center mt-4 text-sm text-gray-500">
+            <p>Don't have credentials?</p>
+            <p>
+              Visit our 
+              <a 
+                href="https://github.com/amoreX/fake-ecom" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-teal-600 underline hover:text-teal-700"
+              >
+                GitHub repository
+              </a> 
+              to find pre-registered credentials in the README file.
+            </p>
+          </div>
         </Card>
       </motion.div>
     </div>
