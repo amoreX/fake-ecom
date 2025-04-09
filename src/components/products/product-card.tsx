@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
-interface prod {
+interface Product {
     id: number;
     title: string;
     price: number;
@@ -17,8 +17,11 @@ interface prod {
         count: number;
     };
 }
+interface ProductCardProps {
+  product: Product;
+}
 
-export default function ProductCard(product: prod) {
+export default function ProductCard({ product }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false)
   const navigate=useNavigate();
 
@@ -34,7 +37,7 @@ export default function ProductCard(product: prod) {
             <img
               src={product.image || "/placeholder.svg?height=400&width=400"}
               alt={product.title}
-              className={`object-cover w-full h-full transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}
+              className={`object-contain w-full h-full transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"}`}
             />
             <div onClick={()=>navigate(`/dashboard/product/${product.id}`)} className="absolute inset-0">
               <span className="sr-only">View {product.title}</span>
@@ -56,7 +59,7 @@ export default function ProductCard(product: prod) {
             </div>
 
             <div className="mt-3">
-              <div onClick={()=>navigate(`/dashboard/products/${product.id}`)} className="w-full">
+              <div onClick={()=>navigate(`/dashboard/product/${product.id}`)} className="w-full">
                 <Button
                   variant="outline"
                   className="w-full border-teal-200 text-teal-600 hover:bg-teal-50 hover:text-teal-700 rounded-full"
