@@ -35,9 +35,9 @@ export default function Navbar() {
             <div onClick={() => navigate("/dashboard")} className="text-sm font-medium hover:text-teal-600 transition-colors cursor-pointer">
               Home
             </div>
-            <div onClick={() => navigate("/dashboard/cart")} className="text-sm font-medium hover:text-teal-600 transition-colors cursor-pointer">
+            {/* <div onClick={() => navigate("/dashboard/cart")} className="text-sm font-medium hover:text-teal-600 transition-colors cursor-pointer">
               Cart
-            </div>
+            </div> */}
           </nav>
 
           <div className="flex items-center gap-4">
